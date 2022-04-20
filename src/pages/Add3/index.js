@@ -152,10 +152,7 @@ export default function ({ navigation, route, onOK }) {
 
 
 
-                <MyInput label="Tempat" value={kirim.tempat} onChangeText={val => setKirim({
-                    ...kirim,
-                    tempat: val
-                })} />
+
 
                 <View style={{ flexDirection: 'row', marginTop: 10 }}>
                     <TouchableOpacity onPress={() => navigation.navigate('Ttd1', {
@@ -195,7 +192,10 @@ export default function ({ navigation, route, onOK }) {
                         }}>Teknisi / Mitra</Text>
                     </TouchableOpacity>
                 </View>
-
+                <MyInput label="Tempat" value={kirim.tempat} onChangeText={val => setKirim({
+                    ...kirim,
+                    tempat: val
+                })} />
 
 
 

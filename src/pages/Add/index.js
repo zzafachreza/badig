@@ -10,10 +10,11 @@ export default function ({ navigation, route }) {
 
     const [kirim, setKirim] = useState({
         fid_user: route.params.id_user,
-        tipe: '',
+        tipe: 'Telkom Akses',
+        petugas: '',
         nik_teknisi: '',
         nomor_order: '',
-        bangunan: '',
+        bangunan: 'Rumah',
         nama_pelanggan: '',
         alamat_pelanggan: '',
         cp_pelanggan: '',
@@ -71,7 +72,7 @@ export default function ({ navigation, route }) {
                     left: 10,
                     fontSize: 14,
                     marginVertical: 10
-                }}>Pilih Tipe</Text>
+                }}>Pilih Petugas</Text>
                 <Picker
                     selectedValue={kirim.tipe}
                     onValueChange={(itemValue, itemIndex) =>
@@ -81,6 +82,10 @@ export default function ({ navigation, route }) {
                     <Picker.Item label="Mitra" value="Mitra" />
                 </Picker>
 
+                <MyInput label="Nama Petugas" value={kirim.petugas} onChangeText={val => setKirim({
+                    ...kirim,
+                    petugas: val
+                })} />
                 <MyInput label="NIK Teknisi" value={kirim.nik_teknisi} onChangeText={val => setKirim({
                     ...kirim,
                     nik_teknisi: val
